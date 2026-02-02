@@ -1156,7 +1156,14 @@ const asciiFileSources = {
   Archaea: "ascii-art/archaea-ascii.txt",
   Cyanobacteria: "ascii-art/cyanobacteria-ascii.txt",
   Proteobacteria: "ascii-art/proteobacteria-ascii.txt",
-  Eukaryota: "ascii-art/eukaryote-ascii.txt"
+  Eukaryota: "ascii-art/eukaryote-ascii.txt",
+  Methanogens: "ascii-art/methanogen-ascii.txt",
+  Plants: "ascii-art/plant-ascii.txt",
+  "Flowering plants": "ascii-art/floweringplants-ascii.txt",
+  Fungi: "ascii-art/fungi-ascii.txt",
+  Animals: "ascii-art/animal-ascii.txt",
+  Invertebrates: "ascii-art/invertebrate-ascii.txt",
+  Fish: "ascii-art/fish-ascii.txt"
 };
 
 const asciiFileCache = new Map();
