@@ -132,8 +132,8 @@ main {
   inset: 0;
   margin: 0;
   font-family: "Geist Mono", "Courier New", monospace;
-  font-size: clamp(10px, 1.1vw, 14px);
-  line-height: 1.1;
+  font-size: clamp(8px, 0.75vw, 11px);
+  line-height: 1;
   color: rgba(148, 163, 184, 0.45);
   display: flex;
   align-items: center;
