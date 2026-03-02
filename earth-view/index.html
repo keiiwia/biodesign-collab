@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Earth Futures – ASCII Projection</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <main class="stage">
+        <div class="image-frame">
+          <button
+            class="nav-arrow nav-arrow--left"
+            id="prev-mode"
+            aria-label="Previous projection"
+          >
+            &#x276E;
+          </button>
+          <button
+            class="nav-arrow nav-arrow--right"
+            id="next-mode"
+            aria-label="Next projection"
+          >
+            &#x276F;
+          </button>
+          <img
+            id="environment-image"
+            src="earth-img.jpg"
+            alt="View of planet Earth from space"
+            class="earth-image"
+          />
+          <div id="projection-clock" class="projection-clock">
+            00:00:00.0 000
+          </div>
+          <div id="ascii-layer" class="ascii-layer"></div>
+        </div>
+      </main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,220 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Helvetica Neue", Arial, sans-serif;
+  background: #050913;
+  color: #f5f7fb;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mode-button {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+  background: #151c2e;
+  color: #f5f7fb;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.15s ease-out, transform 0.1s ease-out,
+    box-shadow 0.15s ease-out, color 0.15s ease-out;
+}
+
+.mode-button:hover {
+  background: #1f273a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.mode-button--ghost {
+  background: transparent;
+  border: 1px solid #3a4564;
+  color: #c0c8de;
+}
+
+.mode-button--ghost:hover {
+  background: rgba(58, 69, 100, 0.2);
+}
+
+.mode-button.is-active {
+  background: linear-gradient(120deg, #3ae6ff, #6dffb5);
+  color: #050913;
+}
+
+.stage {
+  flex: 1;
+  display: flex;
+}
+}
+
+.image-frame {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  background: #000;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: #e5f4ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 4;
+  backdrop-filter: blur(6px);
+  transition: background 0.15s ease-out, transform 0.1s ease-out,
+    box-shadow 0.15s ease-out, color 0.15s ease-out;
+}
+
+.nav-arrow:hover {
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.5);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.nav-arrow--left {
+  left: 16px;
+}
+
+.nav-arrow--right {
+  right: 16px;
+}
+
+.earth-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projection-clock {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  letter-spacing: 0.16em;
+  color: #e5f4ff;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.85);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.image-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #cbd5ff;
+  background: radial-gradient(circle at 30% 0%, #1b2e4d, #02040a);
+  background-blend-mode: screen;
+  text-align: center;
+  padding: 16px;
+}
+
+.image-placeholder span:first-child {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.image-placeholder .hint {
+  font-size: 0.8rem;
+  color: #9badde;
+}
+
+.ascii-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: clamp(7px, 0.9vw, 11px);
+  line-height: 1.1;
+  color: #e6f5ff;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 6px 10px;
+  opacity: 0;
+  transition: opacity 0.4s ease-out, background-color 0.6s ease-out;
+  z-index: 2;
+}
+
+.ascii-layer.is-visible {
+  opacity: 1;
+}
+
+.ascii-layer pre {
+  margin: 0;
+  white-space: pre;
+}
+
+.ascii-layer--calm {
+  background-color: rgba(0, 6, 20, 0.4);
+  color: #90cdf4;
+}
+
+.ascii-layer--fire {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.ascii-layer--forest {
+  background-color: #00140a;
+}
+
+@media (max-width: 640px) {
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+}
+
